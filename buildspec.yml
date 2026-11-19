@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Starting website deployment"
+
+  build:
+    commands:
+      - echo "Building website"
+      - mkdir -p output
+      - cp index.html style.css script.js output/
+
+  post_build:
+    commands:
+      - echo "Website build completed"
+
+artifacts:
+  base-directory: output
+  files:
+    - '**/*'
